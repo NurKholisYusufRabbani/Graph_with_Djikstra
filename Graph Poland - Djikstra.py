@@ -92,3 +92,29 @@ peta.add_city("Elblag")
 peta.add_city("Malbork")
 peta.add_city("Sztum")
 peta.add_city("Krynica Morska")
+
+peta.add_path("bytow","koscierzyna",36)
+peta.add_path("bytow","czersk",62)
+peta.add_path("koscierzyna","czersk",50)
+peta.add_path("koscierzyna","sopot",71)
+peta.add_path("koscierzyna","Gdansk",58)
+peta.add_path("Sopot", "Gdansk", 12)
+peta.add_path("Gdansk", "Tczew", 39)
+peta.add_path("Gdansk", "Nowy Dwor Gdanski", 38)
+peta.add_path("Gdansk", "Starogard Gdanski", 56)
+peta.add_path("Czersk", "Starogard Gdanski", 42)
+peta.add_path("Starogard Gdanski", "Tczew", 26)
+peta.add_path("Tczew", "Nowy Dwor Gdanski", 43)
+peta.add_path("Nowy Dwor Gdanski", "Krynica Morska", 37)
+peta.add_path("Nowy Dwor Gdanski", "Elblag", 24)
+peta.add_path("Elblag", "Malbork", 34)
+peta.add_path("Malbork", "Sztum", 17)
+peta.add_path("Malbork", "Tczew", 28)
+
+peta.printPeta()
+
+print("----------------------------------------------------------------")
+
+#Tambahan
+
+find_distance = input("Apakah Anda ingin melihat jarak total sebuah kota dengan kota lain? (y/n): ")
