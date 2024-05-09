@@ -118,3 +118,36 @@ print("----------------------------------------------------------------")
 #Tambahan
 
 find_distance = input("Apakah Anda ingin melihat jarak total sebuah kota dengan kota lain? (y/n): ")
+
+if find_distance.lower() == "y":
+    print('-------------------------------------------------------------------')
+    src_city = input("Kota apa yang ingin Anda jadikan acuan? ")
+    
+    # Periksa apakah kota tersebut ada dalam peta
+    if src_city in peta.city_List:
+        # Dapatkan jarak dari kota acuan ke semua kota lainnya
+        path_from_src = peta.djikstra(src_city)
+        print("Jarak kota berikut dari", src_city, "adalah:")
+        for city, distance in path_from_src.items():
+            print(city, " adalah ", distance, " KM")
+        print("----------------------------------------------------------------")
+        
+        find_permutations = input("Apakah Anda ingin melihat permutasi dari kota-kota yang terhubung dengan kota tertentu? (y/n): ")
+        
+        if find_permutations.lower() == "y":
+            # Periksa kembali kota acuan
+            if src_city in peta.city_List:
+                # Dapatkan daftar kota yang terhubung dengan kota acuan
+                connected_cities = list(peta.city_List[src_city].keys())
+                
+                # Dapatkan semua permutasi dari kota-kota yang terhubung
+                all_permutations = list(permutations(connected_cities))
+                
+                # Tampilkan semua permutasi
+                print("Semua permutasi kota yang terhubung dengan", src_city, "adalah:")
+                for perm in all_permutations:
+                    print(perm)
+            else:
+                print("Kota yang Anda masukkan tidak ditemukan dalam peta.")
+    else:
+        print("Kota yang Anda masukkan tidak ditemukan dalam peta.")
